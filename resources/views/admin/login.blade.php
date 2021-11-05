@@ -21,8 +21,9 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b></a>
+    <a href="{{ asset('../../index2.html') }}"><b>Admin</b></a>
   </div>
+
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
@@ -31,6 +32,7 @@
       <form action="{{ route('admin.login') }}" method="post">
         @csrf
         <div class="input-group mb-3">
+            {{-- email --}}
           <input type="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
@@ -39,6 +41,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
+            {{-- password --}}
           <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
