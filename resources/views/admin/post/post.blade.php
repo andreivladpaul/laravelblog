@@ -29,17 +29,17 @@
                     <div class="form-group">
                         {{-- title --}}
                         <label for="title">Post title</label>
-                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+                        <input type="text" name="title" value="{{ old('title') }}" class="form-control" id="title" placeholder="Enter title">
                     </div>
                   {{-- subtitle --}}
                   <div class="form-group">
                     <label for="subtitle">Post subtitle</label>
-                    <input type="text" name="suntitle" class="form-control" id="subtitle" placeholder="Enter subtitle">
+                    <input type="text" name="subtitle" value="{{ old('subtitle') }}" class="form-control" id="subtitle" placeholder="Enter subtitle">
                   </div>
                   {{-- slug --}}
                   <div class="form-group">
                     <label for="slug">Post slug</label>
-                    <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter slug">
+                    <input type="text" name="slug" value="{{ old('slug') }}" class="form-control" id="slug" placeholder="Enter slug">
                   </div>
                   {{-- img --}}
                   <div class="form-group">
@@ -56,13 +56,13 @@
                   </div>
 
                   <div class="form-check">
-                    <input type="checkbox" name="status" class="form-check-input" id="status">
+                    <input type="checkbox" name="status" value="{{ old('status') }}" class="form-check-input" id="status">
                     <label class="form-check-label" for="status">Publish</label>
                   </div>
                   {{-- text area --}}
                   <div class="card-body pad">
                     <div class="mb-3">
-                      <textarea class="textarea" name="body" placeholder="Place some text here"
+                      <textarea class="textarea"  name="body" value="{{ old('body') }}" placeholder="Place some text here"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                     </div>
 
