@@ -4,7 +4,7 @@
     @include('admin/layouts/head')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-
+    @include('admin/layouts/sidebar')
     @yield('main-section')
 
 

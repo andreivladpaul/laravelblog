@@ -13,24 +13,13 @@
       <div class="col-md-12">
 
         <div class="card card-outline card-info">
-
-            @if (count($errors) > 0)
-                <div class="alert">
-                    @foreach ($errors->all() as $error)
-                        <p class="alert alert-danger">{{ $error }}</p>
-                    @endforeach
-
-                </div>
-
-            @endif
-            <form role="form"  method="POST" action="{{ route('post.store') }}">
-                @csrf
+            <form role="form">
                 <div class="card-body">
-                    <div class="form-group">
-                        {{-- title --}}
-                        <label for="title">Post title</label>
-                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
-                    </div>
+                  <div class="form-group">
+                      {{-- title --}}
+                    <label for="title">Post title</label>
+                    <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+                  </div>
                   {{-- subtitle --}}
                   <div class="form-group">
                     <label for="subtitle">Post subtitle</label>
@@ -62,7 +51,7 @@
                   {{-- text area --}}
                   <div class="card-body pad">
                     <div class="mb-3">
-                      <textarea class="textarea" name="body" placeholder="Place some text here"
+                      <textarea class="textarea" placeholder="Place some text here"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                     </div>
 

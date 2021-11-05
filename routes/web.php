@@ -12,32 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//User Routes
+Route::namespace('User')->group(function(){
 
-Route::get('/', function () {
-    return view('user/home');
+    Route::get('/','HomeController@index');
+    Route::get('post','PostController@index');
 });
 
-Route::get('post', function () {
-    return view('user/post');
-})->name('post');
-
-Route::get('admin/home', function () {
-    return view('admin/home');
-});
-
-Route::get('admin/post', function () {
-    return view('admin.post.post');
-});
-
-Route::get('admin/tag', function () {
-    return view('admin.tag.tag');
-});
-
-Route::get('admin/category', function () {
-    return view('admin.category.category');
+ //Admin Routes
+Route::namespace('Admin')->group(function(){
+    Route::get('admin/home','HomeController@index')->name('admin.home');
+    Route::resource('admin/post','PostController');
+    Route::resource('admin/tag','TagController');
+    Route::resource('admin/category','CategoryController');
+    Route::resource('admin/user','UserController');
 });
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/* Route::get('/home', 'HomeController@index')->name('home'); */
