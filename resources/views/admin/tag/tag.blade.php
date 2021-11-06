@@ -12,22 +12,28 @@
           <div class="col-md-12">
 
             <div class="card card-outline card-info">
-                <form role="form">
+
+                @include('layouts.messages')
+
+                <form role="form" action="{{route('tag.store')}}" method="POST">
+                    @csrf
                     <div class="card-body">
-                      <div class="form-group">
-                          {{-- title --}}
-                        <label for="tag">Tag title</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter tag">
-                      </div>
+                        <div class="form-group">
+                        {{-- title --}}
+                            <label for="tag">Tag title</label>
+                            <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}" placeholder="Enter tag">
+                        </div>
 
-                      {{-- slug --}}
-                      <div class="form-group">
-                        <label for="slug">Tag slug</label>
-                        <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter slug">
-                      </div>
+                        {{-- slug --}}
+                        <div class="form-group">
+                            <label for="slug">Tag slug</label>
+                            <input type="text" name="slug" class="form-control" value="{{ old('slug') }}" id="slug" placeholder="Enter slug">
+                        </div>
 
-                      <br>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class=" btn mx-3 btn-info" href="{{ route('tag.index') }}">Back</a>
+
                     </div>
                     <!-- /.card-body -->
 

@@ -14,15 +14,7 @@
 
         <div class="card card-outline card-info">
 
-            @if (count($errors) > 0)
-                <div class="alert">
-                    @foreach ($errors->all() as $error)
-                        <p class="alert alert-danger">{{ $error }}</p>
-                    @endforeach
-
-                </div>
-
-            @endif
+            @include('layouts.messages')
             <form role="form"  method="POST" action="{{ route('post.store') }}">
                 @csrf
                 <div class="card-body">
@@ -69,6 +61,7 @@
                   </div>
                   <br>
                   <button type="submit" class="btn btn-primary">Submit</button>
+                  <a class=" btn mx-3 btn-info" href="{{ route('post.index') }}">Back</a>
                 </div>
                 <!-- /.card-body -->
 
