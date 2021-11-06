@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.show');
+        $categories = category::all();
+        return view('admin.category.show', compact('categories'));
     }
 
     /**
@@ -42,7 +43,7 @@ class CategoryController extends Controller
 
         ]);
 
-				$category= new category();
+		$category= new category();
         $category->name = $request->name;
         $category->slug = $request->slug;
         $category->save();
