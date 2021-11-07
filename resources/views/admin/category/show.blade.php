@@ -39,8 +39,8 @@
                     <th>S. No</th>
                     <th>Category Name</th>
                     <th>Slug</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th> </th>
+                    <th> </th>
                   </tr>
                   </thead>
                   <tbody>
@@ -61,8 +61,8 @@
                     <th>S. No</th>
                     <th>Category Name</th>
                     <th>Slug</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th> </th>
+                    <th> </th>
                   </tr>
                   </tfoot>
                 </table>

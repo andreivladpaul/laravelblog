@@ -41,8 +41,8 @@
                     <th>Title</th>
                     <th>Subtitle</th>
                     <th>Slug</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th> </th>
+                    <th> </th>
                   </tr>
                   </thead>
                   <tbody>
@@ -53,9 +53,15 @@
                         <td> {{ $post['title'] }}</td>
                         <td> {{ $post['subtitle'] }}</td>
                         <td>{{ $post['slug'] }}</td>
-                        <td><a class="btn btn-block btn-warning py-2" href="#">Edit</a></td>
-                        <td><a class="btn btn-block btn-danger py-2" href="#">Delete</a></td>
-                      </tr>
+                        <td><a class="btn btn-block btn-warning py-2" href="{{ route('post.edit',$post->id) }}">Edit</a></td>
+                        <td>
+                            <form id="{{ $post->id }}" method="POST" action="{{ route('post.destroy', $post->id) }}" >
+                                @csrf
+                                @method('delete')
+                            </form>
+                            <a class="btn btn-block btn-danger py-2" href="#"  onclick="event.preventDefault();document.getElementById('{{ $post->id }}').submit(); ">Delete</a>
+                        </td>
+                    </tr>
                     @endforeach
 
                   </tbody>
@@ -65,8 +71,8 @@
                     <th>Title</th>
                     <th>Subtitle</th>
                     <th>Slug</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th> </th>
+                    <th> </th>
                   </tr>
                   </tfoot>
                 </table>
