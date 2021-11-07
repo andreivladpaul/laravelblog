@@ -50,8 +50,14 @@
                         <td>{{ $category['id'] }}</td>
                         <td> {{ $category['name'] }}</td>
                         <td>{{ $category['slug'] }}</td>
-                        <td><a class="btn btn-block btn-warning py-2" href="#">Edit</a></td>
-                        <td><a class="btn btn-block btn-danger py-2" href="#">Delete</a></td>
+                        <td><a class="btn btn-block btn-warning py-2" href="{{ route('category.edit',$category->id) }}">Edit</a></td>
+                        <td>
+                            <form id="{{ $category->id }}" method="POST" action="{{ route('category.destroy', $category->id) }}" >
+                                @csrf
+                                @method('delete')
+                            </form>
+                            <a class="btn btn-block btn-danger py-2" href="#"  onclick="event.preventDefault();document.getElementById('{{ $category->id }}').submit(); ">Delete</a>
+                        </td>
                       </tr>
                     @endforeach
 

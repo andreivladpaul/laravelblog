@@ -51,8 +51,17 @@
                             <td>{{ $tag['id'] }}</td>
                             <td> {{ $tag['name'] }}</td>
                             <td>{{ $tag['slug'] }}</td>
-                            <td><a class="btn btn-block btn-warning py-2" href="#">Edit</a></td>
-                            <td><a class="btn btn-block btn-danger py-2" href="#">Delete</a></td>
+                            <td>
+
+                                <a class="btn btn-block btn-warning py-2"  href="{{ route('tag.edit',$tag->id) }}">Edit</a>
+                            </td>
+                            <td>
+                                <form id="{{ $tag->id }}" method="POST" action="{{ route('tag.destroy', $tag->id) }}" >
+                                    @csrf
+                                    @method('delete')
+                                </form>
+                                <a class="btn btn-block btn-danger py-2" href="#"  onclick="event.preventDefault();document.getElementById('{{ $tag->id }}').submit(); ">Delete</a>
+                            </td>
                           </tr>
                         @endforeach
 

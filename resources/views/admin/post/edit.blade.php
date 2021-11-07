@@ -13,8 +13,8 @@
       <div class="col-md-12">
 
         <div class="card card-outline card-info">
-
             @include('layouts.messages')
+
             <form role="form"  method="POST" action="{{ route('post.update', $post->id) }}">
                 @csrf
                 @method('PUT')
