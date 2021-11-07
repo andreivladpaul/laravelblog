@@ -15,4 +15,5 @@ class post extends Model
     {
         return $this->belongsToMany('App\Model\user\category','category_posts');
     }
+
 }

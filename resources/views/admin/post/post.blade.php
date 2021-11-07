@@ -80,3 +80,7 @@
 
 </div>
 @endsection
+
+@section('footer-section')
+    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+@endsection
