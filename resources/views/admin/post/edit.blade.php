@@ -55,7 +55,8 @@
                   {{-- text area --}}
                   <div class="card-body pad">
                     <div class="mb-3">
-                      <textarea class="textarea"  name="body" placeholder="Place some text here"
+                        {{-- textarea --}}
+                      <textarea class="textarea ckeditor "  name="body" cols="35" rows="20" placeholder="Place some text here"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $post->body }}</textarea>
                     </div>
 
@@ -80,4 +81,8 @@
 
 
 </div>
+@endsection
+
+@section('footer-section')
+    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 @endsection
