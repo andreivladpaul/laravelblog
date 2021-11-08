@@ -424,3 +424,11 @@
     $(this).addClass('active');
   });
 })(jQuery)
+
+const alertDiv = document.querySelectorAll('.alert');
+console.log(alertDiv)
+if(alertDiv){
+    setTimeout(() => {
+        alertDiv[0].remove();
+    },5000)
+}
